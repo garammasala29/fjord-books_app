@@ -21,8 +21,6 @@
         <td><%= user.adress %></td>
         <td><%= user.introduction %></td>
         <td><%= link_to t('views.common.show'), user %></td>
-        <td><%= link_to t('views.common.edit'), edit_user_registration_path(user) %></td>
-        <td><%= link_to t('views.common.destroy'), user, method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
