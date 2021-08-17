@@ -4,6 +4,7 @@ class Users::SessionsController < Devise::SessionsController
   skip_before_action :authenticate_user!
   before_action :configure_sign_in_params, only: [:create]
 
+  # rubocop:disable all
   # GET /resource/sign_in
   def new
     super
@@ -18,6 +19,8 @@ class Users::SessionsController < Devise::SessionsController
   def destroy
     super
   end
+
+  # rubocop:enable all
 
   protected
 
