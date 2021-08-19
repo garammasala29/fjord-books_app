@@ -2,7 +2,7 @@
 
 <p>
   <strong><%= User.human_attribute_name(:image) %>:</strong>
-  <%= image_tag @user.image %>
+  <%= image_tag @user.display_image if @user.image.attached? %>
 </p>
 
 <p>
