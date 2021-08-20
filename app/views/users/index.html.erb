@@ -16,7 +16,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.email %></td>
-        <td><%= image_tag user.display_image_mini if user.image.attached? %></td>
+        <td><%= image_tag user.display_image_mini if user.image.attached? && user.image.variable? %></td>
         <td><%= user.name %></td>
         <td><%= user.postal_code %></td>
         <td><%= user.address %></td>

@@ -14,6 +14,15 @@
 
   <%= render 'devise/registrations/profile_fields', f: f %>
 
+  <p>
+    <%= t('view.edit.current') %><%= User.human_attribute_name(:image) %><br>
+    <% if @user.image.attached? && @user.image.variable? %>
+      <%= image_tag @user.display_image %>
+    <% else %>
+      <%= t('view.edit.none') %>
+    <% end %>
+  </p>
+
   <div class="field">
     <%= f.label :password %> <i>(<%= t('.leave_blank_if_you_don_t_want_to_change_it') %></i>)<br />
     <%= f.password_field :password, autocomplete: "new-password" %>
