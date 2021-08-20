@@ -20,3 +20,5 @@ ja:
     edit:
       current: 現在の
       none: なし
+  message:
+    incorrect_extension: 拡張子が正しくありません
