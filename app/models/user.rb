@@ -2,19 +2,19 @@
 
 class User < ApplicationRecord
   has_one_attached :image
-  validate :file_type
+  validate :configure_permitted_extensions
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  def display_image
-    image.variant(resize_to_limit: [400, 400])
+  def avatar
+    image.variant(resize_to_limit: [200, 200])
   end
 
-  def display_image_mini
-    image.variant(resize_to_limit: [100, 100])
+  def small_avatar
+    image.variant(resize_to_limit: [50, 50])
   end
 
-  def file_type
+  def configure_permitted_extensions
     return unless image.attached?
 
     extension = ['image/jpg', 'image/jpeg', 'image/png', 'image/gif']
