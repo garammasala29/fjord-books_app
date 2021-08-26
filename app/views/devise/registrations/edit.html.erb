@@ -17,7 +17,7 @@
   <p>
     <%= t('view.edit.current') %><%= User.human_attribute_name(:image) %><br>
     <% if @user.image.attached? && @user.image.variable? %>
-      <%= image_tag @user.avatar %>
+      <%= image_tag @user.middle_image %>
     <% else %>
       <%= t('view.edit.none') %>
     <% end %>
