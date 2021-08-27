@@ -1,6 +1,11 @@
 <h1><%= t('views.common.title_show', name: Report.model_name.human) %></h1>
 
 <p>
+  <%= Report.human_attribute_name(:created_at) %>:
+  <%= l @report.created_at, format: :long %>
+</p>
+
+<p>
   <strong><%= Report.human_attribute_name(:title) %>:</strong>
   <%= @report.title %>
 </p>
