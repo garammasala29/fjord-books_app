@@ -21,3 +21,6 @@ ja:
         title: タイトル
         content: 内容
         created_at: 投稿日時
+  errors:
+    messages:
+      permission_denied: 権限がありません

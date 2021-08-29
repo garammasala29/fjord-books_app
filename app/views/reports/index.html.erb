@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th><%= Report.human_attribute_name(:created_at) %></th>
+      <th><%= User.model_name.human %></th>
       <th><%= Report.human_attribute_name(:title) %></th>
       <th><%= Report.human_attribute_name(:content) %></th>
       <th colspan="3"></th>
@@ -14,6 +15,7 @@
     <% @reports.each do |report| %>
       <tr>
         <td><%= l report.created_at, format: :long %></td>
+        <td><%= report.user.name %></td>
         <td><%= report.title %></td>
         <td><%= report.content %></td>
         <td><%= link_to t('views.common.show'), report %></td>
