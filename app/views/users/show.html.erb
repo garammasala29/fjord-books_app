@@ -44,7 +44,7 @@
   <%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% else %>
   <% if current_user.following?(@user) %>
-    <%= button_to t('common.unfollow'), relationship_path, { method: :delete, id: @user.id} %>
+    <%= button_to t('common.unfollow'), following_relationship_path, { method: :delete, id: @user.id} %>
   <% else %>
     <%= form_with(model: current_user.active_relationships.build) do |f| %>
       <%= hidden_field_tag :follower_id, @user.id %>
