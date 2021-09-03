@@ -29,3 +29,5 @@ ja:
     messages:
       permission_denied: 権限がありません
       no_comments: コメントはありません
+  comments:
+    create: コメントする
