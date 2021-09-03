@@ -41,7 +41,7 @@ class ReportsController < ApplicationController
   private
     def validate_execute_permission
       @report = Report.find(params[:id])
-      redirect_to request.referer, notice: t('errors.messages.permission_denied') unless @report.user_id == current_user.id
+      redirect_to reports_path, notice: t('errors.messages.permission_denied') unless @report.user_id == current_user.id
     end
 
     def report_params
