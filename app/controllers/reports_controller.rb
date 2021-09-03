@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ReportsController < ApplicationController
-  before_action :validate_execute_permission, only: %i[ edit update destroy ]
+  before_action :validate_execute_permission, only: %i[edit update destroy]
 
   def index
     @reports = Report.order(created_at: :desc).page(params[:page])
@@ -13,8 +15,7 @@ class ReportsController < ApplicationController
     @report = current_user.reports.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @report = current_user.reports.new(report_params)
@@ -39,12 +40,13 @@ class ReportsController < ApplicationController
   end
 
   private
-    def validate_execute_permission
-      @report = Report.find(params[:id])
-      redirect_to reports_path, notice: t('errors.messages.permission_denied') unless @report.user_id == current_user.id
-    end
 
-    def report_params
-      params.require(:report).permit(:title, :content)
-    end
+  def validate_execute_permission
+    @report = Report.find(params[:id])
+    redirect_to reports_path, notice: t('errors.messages.permission_denied') unless @report.user_id == current_user.id
+  end
+
+  def report_params
+    params.require(:report).permit(:title, :content)
+  end
 end
