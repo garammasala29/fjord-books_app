@@ -13,7 +13,6 @@ class ReportsTest < ApplicationSystemTestCase
 
   test 'visiting the reports index' do
     click_on '日報'
-    visit reports_url
     assert_selector 'h1', text: '日報'
   end
 
