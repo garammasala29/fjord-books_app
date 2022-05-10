@@ -15,10 +15,6 @@ class User < ApplicationRecord
     end
   end
 
-  def self.create_unique_string
-    SecureRandom.uuid
-  end
-
   def self.dummy_email(auth)
     "#{SecureRandom.alphanumeric + auth.provider}@example.com"
   end
