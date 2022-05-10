@@ -20,6 +20,6 @@ class User < ApplicationRecord
   end
 
   def self.dummy_email(auth)
-    "#{auth.uid + auth.provider}@example.com"
+    "#{SecureRandom.alphanumeric + auth.provider}@example.com"
   end
 end
